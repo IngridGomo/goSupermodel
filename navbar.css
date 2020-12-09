@@ -1,0 +1,39 @@
+#navbar {
+    position: relative;
+    background-color: lightgrey;
+    width: 100%;
+    height: 200px;
+    padding: 0;
+}
+
+#header_logo {
+    height: 80%;
+    display: inline-block;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+#header_tabUl {
+    position: absolute;
+    display: inline;
+    margin-right: 10%;
+  }
+
+.header_tabLi {
+    display: inline;
+}
+
+#header_logoImg {
+    height: 100px;
+}
+
+.header_tab {
+    background-color: grey;
+    padding: 10%;
+}
+
+#header_downbar {
+    background-color: grey;
+    width: 100%;
+    margin-bottom: 0;
+}
