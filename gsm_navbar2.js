@@ -1,4 +1,4 @@
-const headerTarget = document.getElementById(header);
+const headerTarget = document.querySelector("#header");
 createNavbar(headerTarget);
 
 function createNavbar(targetElement) {
@@ -11,23 +11,23 @@ function createNavbar(targetElement) {
     createModElement("img", logo, "", "", [["src", ""], ["id", "header_logoImg"], ["alt", "goSupermodel_logo"]]);
 
     createModElement("ul", navbar, "", "", ["id", "header_tabUl"]);
-    for (i = 0; i < 5; i++) {
-        createModElement("li", document.querySelector("#header-tabUl"), "", "", ["class", "header_tabLi"]);
+    for (i = 0; i < 4; i++) {
+        createModElement("li", document.querySelector("#header_tabUl"), "", "", ["class", "header_tabLi"]);
     }
-    const tabLiiElements = document.getElementsByClassName("js-header-li");
+    const tabLiElements = document.getElementsByClassName("header_tabLi");
 
     // Definerer tabsene
-    createModElement("a", tabLiElements[1], "Forside", "gsm_forside.html", ["class", "header_link"]);
-    createModElement("a", tabLiElements[2], "Shopping", "gsm_shopping.html", ["class", "header_link"]);
-    createModElement("a", tabLiElements[3], "Spill", "gsm_spill.html", ["class", "header_link"]);
-    createModElement("a", tabLiElements[4], "Forum", "gsm_forum.html", ["class", "header_link"]);
+    createModElement("a", tabLiElements[0], "Forside", "gsm_forside.html", ["class", "header_link"]);
+    createModElement("a", tabLiElements[1], "Shopping", "gsm_shopping.html", ["class", "header_link"]);
+    createModElement("a", tabLiElements[2], "Spill", "gsm_spill.html", ["class", "header_link"]);
+    createModElement("a", tabLiElements[3], "Forum", "gsm_forum.html", ["class", "header_link"]);
 
 
     // Lager en ting (f.eks. "a", "div") med det den skulle trenge av spesifikasjoner
     // attr = enten et array med ["attribute","verdi"] eller matrise [["attribute","verdi"],
         // ["attribute","verdi"], ..., ...]
-    function createModElement(tagName, target, content = "", url = "", attr = "") {
-    const node = document.createElement(tagName); // f.eks. "a", "div"
+    function createModElement(htmlElement, target, content = "", url = "", attr = "") {
+    const node = document.createElement(htmlElement); // f.eks. "a", "div"
     const textnode = document.createTextNode(content); // definerer teksten
     node.appendChild(textnode); //legger til teksten i tingen (f.eks. i en "a")
     if (url !== "") {
@@ -43,6 +43,8 @@ function createNavbar(targetElement) {
             node.setAttribute(attr[0], attr[1]); //er ikke en matrise, setter attributt tin tingen
         }
     }
+    console.log(node);
+    console.log(target);
     target.appendChild(node);
     }
 }
