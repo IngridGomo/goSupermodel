@@ -10,19 +10,30 @@ function createNavbar(targetElement) {
 
     createModElement("img", logo, "", "", [["src", "./img/gsm_logo.jpg"], ["id", "header_logoImg"], ["alt", "goSupermodel_logo"]]);
 
-    createModElement("ul", navbar, "", "", ["id", "header_tabUl"]);
+    /*createModElement("ul", navbar, "", "", ["id", "header_tabUl"]);
     for (i = 0; i < 4; i++) {
         createModElement("li", document.querySelector("#header_tabUl"), "", "", ["class", "header_tabLi"]);
     }
-    const tabLiElements = document.getElementsByClassName("header_tabLi");
+    const tabLiElements = document.getElementsByClassName("header_tabLi");*/
+
+    createModElement("div", navbar, "", "", ["id", "tab_container"]);
+    createModElement("a", tab_container, "Forside", "gsm_forside.html", [["class", "header_tab"], ["id", "left_maintab"]]);
+    createModElement("a", tab_container, "Shopping", "gsm_shopping.html", ["class", "header_tab"]);
+    createModElement("a", tab_container, "Spill", "gsm_spill.html", ["class", "header_tab"]);
+    createModElement("a", tab_container, "Forum", "gsm_forum.html", [["class", "header_tab"], ["id", "right_maintab"]]);
 
     createModElement("div", navbar, "", "", ["id", "header_downbar"]);
+    createModElement("div", header_downbar, "", "", ["id", "downbar_tabs"]);
+    createModElement("a", downbar_tabs, "Min profil", "gsm_profil.html", [["class", "mini_tabs"], ["id", "left_minitab"]]);
+    createModElement("a", downbar_tabs, "goBeskjeder", "gsm_meldinger.html", ["class", "mini_tabs"]);
+    createModElement("a", downbar_tabs, "Venninner", "gsm_venniner.html", ["class", "mini_tabs"]);
+    createModElement("a", downbar_tabs, "goPenger", "", [["class", "mini_tabs"], ["id", "right_minitab"]]);
 
     // Definerer tabsene
-    createModElement("a", tabLiElements[0], "Forside", "gsm_forside.html", ["class", "header_tab"]);
+    /*createModElement("a", tabLiElements[0], "Forside", "gsm_forside.html", ["class", "header_tab"]);
     createModElement("a", tabLiElements[1], "Shopping", "gsm_shopping.html", ["class", "header_tab"]);
     createModElement("a", tabLiElements[2], "Spill", "gsm_spill.html", ["class", "header_tab"]);
-    createModElement("a", tabLiElements[3], "Forum", "gsm_forum.html", ["class", "header_tab"]);
+    createModElement("a", tabLiElements[3], "Forum", "gsm_forum.html", ["class", "header_tab"]);*/
 
 
     // Lager en ting (f.eks. "a", "div") med det den skulle trenge av spesifikasjoner
